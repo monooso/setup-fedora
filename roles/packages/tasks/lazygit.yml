@@ -9,5 +9,5 @@
     mv lazygit ~/.local/bin/
     rm lazygit.tar.gz
   args:
-    creates: "{{ ansible_env.HOME }}/.local/bin/lazygit"
+    creates: "{{ home_dir }}/.local/bin/lazygit"
 

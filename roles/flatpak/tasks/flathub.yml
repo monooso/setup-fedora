@@ -2,5 +2,5 @@
   flatpak_remote:
     name: flathub
     state: present
-    url: https://flathub.org/repo/flathub.flatpakrepo
+    flatpakrepo_url: https://flathub.org/repo/flathub.flatpakrepo
 

@@ -1,10 +1,10 @@
 - name: Install Pop Shell extension
+  become: true
   dnf:
     name: gnome-shell-extension-pop-shell
     state: present
 
 - name: Enable Pop Shell extension
-  become: false
   shell: |
     gnome-extensions enable pop-shell@system76.com
   args:
@@ -15,9 +15,8 @@
   changed_when: false
 
 - name: Set Pop Shell search shortcut to Super+Space
-  become: false
   shell: |
-    gsettings set org.gnome.shell.extensions.pop-shell activate-launcher '<Super>space'
+    gsettings set org.gnome.shell.extensions.pop-shell activate-launcher "['<Super>space']"
   environment:
     DISPLAY: :0
     XDG_CURRENT_DESKTOP: GNOME

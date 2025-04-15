@@ -1,15 +1,17 @@
 - hosts: localhost
-  become: true
+  connection: local
+  gather_facts: false
   vars:
-    dotfiles_repo: "https://github.com/monooso/dotfiles"
-    dotfiles_dest: "{{ ansible_env.HOME }}/code/dotfiles"
-    ssh_key_passphrase: "{{ lookup('env', 'SSH_KEY_PASSPHRASE') }}"  # or set this via --extra-vars or vault
-
+    home_dir: "{{ lookup('env', 'HOME') }}"
+    username: "{{ lookup('env', 'USER') }}"
+    ssh_key_passphrase: "{{ lookup('env', 'SSH_KEY_PASSPHRASE') }}"
   roles:
-    - packages
-    - dotfiles
-    - flatpak
-    - gnome
-    - appimages
-    - ssh
+    - role: packages
+      become: true
+
+    - role: dotfiles
+    - role: flatpak
+    - role: gnome
+    - role: appimages
+    - role: ssh
 

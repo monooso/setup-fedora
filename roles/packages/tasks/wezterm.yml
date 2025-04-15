@@ -1,7 +1,7 @@
 - name: Enable WezTerm COPR
-  command: dnf copr enable -y wez/wezterm
+  command: dnf copr enable -y wezfurlong/wezterm-nightly
   args:
-    creates: /etc/yum.repos.d/_copr:copr.fedorainfracloud.org:wez:wezterm.repo
+    creates: /etc/yum.repos.d/_copr:copr.fedorainfracloud.org:wezfurlong:wezterm-nightly.repo
 
 - name: Install WezTerm
   dnf:

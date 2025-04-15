@@ -1,15 +1,14 @@
 - name: Ensure ~/.ssh directory exists
   file:
-    path: "{{ ansible_env.HOME }}/.ssh"
+    path: "{{ home_dir }}/.ssh"
     state: directory
     mode: '0700'
-    owner: "{{ ansible_user }}"
-    group: "{{ ansible_user }}"
+    owner: "{{ username }}"
+    group: "{{ username }}"
 
 - name: Generate SSH key if it doesn't exist
-  become: false
   command: >
-    ssh-keygen -t ed25519 -C "default key" -f "{{ ansible_env.HOME }}/.ssh/default" -N "{{ ssh_key_passphrase }}"
+    ssh-keygen -t ed25519 -C "default key" -f "{{ home_dir }}/.ssh/default" -N "{{ ssh_key_passphrase }}"
   args:
-    creates: "{{ ansible_env.HOME }}/.ssh/default"
+    creates: "{{ home_dir }}/.ssh/default"
 

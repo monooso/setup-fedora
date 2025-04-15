@@ -1,5 +1,4 @@
 - name: Enable GNOME dark mode
-  become: false
   command: gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
   args:
     executable: /bin/bash

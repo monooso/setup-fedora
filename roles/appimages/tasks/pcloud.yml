@@ -1,8 +1,7 @@
 - name: Download pCloud AppImage
-  become: false
   get_url:
     url: https://www.pcloud.com/how-to-install-pcloud-drive-linux.html?download=electron-64
-    dest: "{{ ansible_env.HOME }}/.local/bin/pcloud"
+    dest: "{{ home_dir }}/.local/bin/pcloud"
     mode: '0755'
     force: yes
 

@@ -1,7 +1,8 @@
 - name: Add Docker CE repository
-  command: dnf config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo
-  args:
-    creates: /etc/yum.repos.d/docker-ce.repo
+  get_url:
+    url: https://download.docker.com/linux/fedora/docker-ce.repo
+    dest: /etc/yum.repos.d/docker-ce.repo
+    mode: '0644'
 
 - name: Install Docker Engine
   dnf:
@@ -19,7 +20,7 @@
 
 - name: Add user to docker group
   user:
-    name: "{{ ansible_user }}"
+    name: "{{ username }}"
     groups: docker
     append: true
 

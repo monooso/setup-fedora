@@ -1,7 +1,7 @@
 - name: Install Starship prompt
   become: false
   shell: |
-    curl -sS https://starship.rs/install.sh | sh
+    curl -sS https://starship.rs/install.sh | sh -s -- -y
   args:
-    creates: "{{ ansible_env.HOME }}/.cargo/bin/starship"
+    creates: "{{ home_dir }}/.cargo/bin/starship"
 

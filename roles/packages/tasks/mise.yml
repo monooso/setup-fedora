@@ -3,7 +3,7 @@
   shell: |
     curl https://mise.run | bash
   args:
-    creates: "{{ ansible_env.HOME }}/.local/share/mise"
+    creates: "{{ home_dir }}/.local/share/mise"
 
 - name: Install build dependencies for Erlang and Elixir (via Mise)
   dnf:

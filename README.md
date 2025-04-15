@@ -29,7 +29,7 @@ git clone https://github.com/monooso/setup-linux.git
 cd setup-linux
 
 # Run the playbook
-ansible-playbook playbook.yml --ask-become-pass --extra-vars "ssh_key_passphrase=yourpass"
+ansible-playbook -i inventory playbook.yml --ask-become-pass --extra-vars "ssh_key_passphrase=yourpass"
 ```
 
 ---
