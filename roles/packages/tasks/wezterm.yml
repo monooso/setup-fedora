@@ -1,0 +1,10 @@
+- name: Enable WezTerm COPR
+  command: dnf copr enable -y wez/wezterm
+  args:
+    creates: /etc/yum.repos.d/_copr:copr.fedorainfracloud.org:wez:wezterm.repo
+
+- name: Install WezTerm
+  dnf:
+    name: wezterm
+    state: present
+

@@ -1,0 +1,4 @@
+- import_tasks: pop-shell.yml
+- import_tasks: dark-mode.yml
+- import_tasks: wallpaper.yml
+

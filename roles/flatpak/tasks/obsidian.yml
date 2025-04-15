@@ -1,0 +1,6 @@
+- name: Install Obsidian via Flatpak
+  flatpak:
+    name: md.obsidian.Obsidian
+    state: present
+    remote: flathub
+

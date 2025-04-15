@@ -1,0 +1,7 @@
+- name: Install Starship prompt
+  become: false
+  shell: |
+    curl -sS https://starship.rs/install.sh | sh
+  args:
+    creates: "{{ ansible_env.HOME }}/.cargo/bin/starship"
+

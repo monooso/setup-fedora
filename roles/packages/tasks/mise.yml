@@ -1,0 +1,19 @@
+- name: Install Mise version manager
+  become: false
+  shell: |
+    curl https://mise.run | bash
+  args:
+    creates: "{{ ansible_env.HOME }}/.local/share/mise"
+
+- name: Install build dependencies for Erlang and Elixir (via Mise)
+  dnf:
+    name:
+      - autoconf
+      - automake
+      - g++
+      - gcc
+      - git
+      - ncurses-devel
+      - openssl-devel
+    state: present
+

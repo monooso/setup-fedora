@@ -1,0 +1,12 @@
+- import_tasks: cli.yml
+- import_tasks: databases.yml
+- import_tasks: gh.yml
+- import_tasks: mise.yml
+- import_tasks: wezterm.yml
+- import_tasks: starship.yml
+- import_tasks: lazygit.yml
+- import_tasks: onepassword.yml
+- import_tasks: brave.yml
+- import_tasks: docker.yml
+- import_tasks: expressvpn.yml
+- import_tasks: tableplus.yml

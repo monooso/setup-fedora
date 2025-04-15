@@ -1,0 +1,23 @@
+- name: Ensure ~/code directory exists
+  file:
+    path: "{{ ansible_env.HOME }}/code"
+    state: directory
+    mode: '0755'
+
+- name: Clone dotfiles repository
+  git:
+    repo: "{{ dotfiles_repo }}"
+    dest: "{{ ansible_env.HOME }}/code/dotfiles"
+    version: main
+    update: yes
+
+- name: Install GNU Stow
+  dnf:
+    name: stow
+    state: present
+
+- name: Symlink dotfiles using Stow
+  command: stow -t {{ ansible_env.HOME }} .
+  args:
+    chdir: "{{ ansible_env.HOME }}/code/dotfiles"
+

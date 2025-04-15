@@ -1,0 +1,5 @@
+- import_tasks: flathub.yml
+- import_tasks: discord.yml
+- import_tasks: obsidian.yml
+- import_tasks: signal.yml
+- import_tasks: spotify.yml

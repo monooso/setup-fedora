@@ -1,0 +1,21 @@
+- name: Import Brave browser GPG key
+  rpm_key:
+    key: https://brave.com/signing-key.asc
+    state: present
+
+- name: Add Brave browser repository
+  copy:
+    dest: /etc/yum.repos.d/brave-browser.repo
+    content: |
+      [brave-browser]
+      name=Brave Browser
+      baseurl=https://brave-browser-rpm-release.s3.brave.com/x86_64/
+      enabled=1
+      gpgcheck=1
+      gpgkey=https://brave.com/signing-key.asc
+
+- name: Install Brave browser
+  dnf:
+    name: brave-browser
+    state: present
+

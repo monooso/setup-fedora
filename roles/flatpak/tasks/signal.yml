@@ -1,0 +1,6 @@
+- name: Install Signal via Flatpak
+  flatpak:
+    name: org.signal.Signal
+    state: present
+    remote: flathub
+

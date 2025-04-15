@@ -1,0 +1,15 @@
+- name: Import TablePlus GPG key
+  rpm_key:
+    key: https://yum.tableplus.com/apt.tableplus.com.gpg.key
+    state: present
+
+- name: Add TablePlus repository
+  get_url:
+    url: https://yum.tableplus.com/rpm/x86_64/tableplus.repo
+    dest: /etc/yum.repos.d/tableplus.repo
+
+- name: Install TablePlus
+  dnf:
+    name: tableplus
+    state: present
+

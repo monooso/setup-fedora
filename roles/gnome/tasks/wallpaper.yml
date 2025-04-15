@@ -1,0 +1,26 @@
+- name: Ensure Pictures directory exists
+  file:
+    path: "{{ ansible_env.HOME }}/Pictures"
+    state: directory
+    mode: '0755'
+    owner: "{{ ansible_user }}"
+    group: "{{ ansible_user }}"
+
+- name: Download selected wallpaper
+  get_url:
+    url: https://images.pexels.com/photos/1293120/pexels-photo-1293120.jpeg
+    dest: "{{ ansible_env.HOME }}/Pictures/wallpaper.jpg"
+    mode: '0644'
+    force: yes
+
+- name: Set GNOME wallpaper
+  become: false
+  shell: |
+    gsettings set org.gnome.desktop.background picture-uri 'file://{{ ansible_env.HOME }}/Pictures/wallpaper.jpg'
+  args:
+    executable: /bin/bash
+  environment:
+    DISPLAY: :0
+    XDG_CURRENT_DESKTOP: GNOME
+  changed_when: false
+

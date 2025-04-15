@@ -1,0 +1,6 @@
+- name: Enable Flathub
+  flatpak_remote:
+    name: flathub
+    state: present
+    url: https://flathub.org/repo/flathub.flatpakrepo
+
