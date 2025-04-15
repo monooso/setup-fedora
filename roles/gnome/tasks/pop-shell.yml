@@ -14,11 +14,3 @@
     XDG_CURRENT_DESKTOP: GNOME
   changed_when: false
 
-- name: Set Pop Shell search shortcut to Super+Space
-  shell: |
-    gsettings set org.gnome.shell.extensions.pop-shell activate-launcher "['<Super>space']"
-  environment:
-    DISPLAY: :0
-    XDG_CURRENT_DESKTOP: GNOME
-  changed_when: false
-
