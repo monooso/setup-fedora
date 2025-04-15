@@ -1,6 +1,6 @@
-- name: Ensure ~/.ssh directory exists
+- name: Ensure SSH keys directory exists
   file:
-    path: "{{ home_dir }}/.ssh"
+    path: "{{ home_dir }}/.ssh/keys.d"
     state: directory
     mode: '0700'
     owner: "{{ username }}"
@@ -8,7 +8,7 @@
 
 - name: Generate SSH key if it doesn't exist
   command: >
-    ssh-keygen -t ed25519 -C "default key" -f "{{ home_dir }}/.ssh/default" -N "{{ ssh_key_passphrase }}"
+    ssh-keygen -t ed25519 -C "default key" -f "{{ home_dir }}/.ssh/keys.d/default" -N "{{ ssh_key_passphrase }}"
   args:
-    creates: "{{ home_dir }}/.ssh/default"
+    creates: "{{ home_dir }}/.ssh/keys.d/default"
 
