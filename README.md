@@ -48,14 +48,14 @@ ansible-playbook -i inventory playbook.yml --ask-become-pass --extra-vars "ssh_k
 You must provide a passphrase for the SSH key named `default`. Either:
 
 ```bash
-ansible-playbook playbook.yml --ask-become-pass --extra-vars "ssh_key_passphrase=yourpass"
+ansible-playbook -i inventory playbook.yml --ask-become-pass --extra-vars "ssh_key_passphrase=yourpass"
 ```
 
 Or set it via environment:
 
 ```bash
 export SSH_KEY_PASSPHRASE=yourpass
-ansible-playbook playbook.yml --ask-become-pass
+ansible-playbook -i inventory playbook.yml --ask-become-pass
 ```
 
 ---
