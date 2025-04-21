@@ -2,6 +2,7 @@
 - import_tasks: databases.yml
 - import_tasks: gh.yml
 - import_tasks: ghostty.yml
+- import_tasks: kitty.yml
 - import_tasks: mise.yml
 - import_tasks: starship.yml
 - import_tasks: lazygit.yml
