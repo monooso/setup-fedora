@@ -80,6 +80,8 @@ ansible-playbook -i inventory playbook.yml --ask-become-pass
 ### GNOME config
 - Dark mode
 - Custom wallpaper
+- Toggle the overview with `<Super>space`
+- Toggle the application view with `<Super>a`
 - Quit applications with `<Super>q`
 - Toggle maximised windows with `<Super>m`
 - Set the number of workspaces to 9
