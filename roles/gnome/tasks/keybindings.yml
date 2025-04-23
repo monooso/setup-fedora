@@ -1,3 +1,20 @@
+- name: Remove useless `<Super>space` keybindings
+  shell: |
+    gsettings set org.freedesktop.ibus.general.hotkey triggers []
+    gsettings set org.gnome.desktop.wm.keybindings switch-input-source []
+    gsettings set org.gnome.desktop.wm.keybindings switch-input-source-backward []
+  environment:
+    DISPLAY: :0
+    XDG_CURRENT_DESKTOP: GNOME
+  changed_when: false
+
+- name: Toggle the overview with `<Super>space`
+  shell: |
+    gsettings set org.gnome.shell.keybindings toggle-overview "['<Super>space']"
+  environment:
+    DISPLAY: :0
+    XDG_CURRENT_DESKTOP: GNOME
+  changed_when: false
 - name: Quit application with `<Super>q`
   shell: gsettings set org.gnome.desktop.wm.keybindings close "['<Super>q']"
   environment:
