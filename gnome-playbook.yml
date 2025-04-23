@@ -1,0 +1,10 @@
+# Run the GNOME tasks, and nothing else.
+- hosts: localhost
+  connection: local
+  gather_facts: false
+  vars:
+    home_dir: "{{ lookup('env', 'HOME') }}"
+    username: "{{ lookup('env', 'USER') }}"
+  roles:
+    - role: gnome
+

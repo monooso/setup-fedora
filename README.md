@@ -80,6 +80,11 @@ ansible-playbook -i inventory playbook.yml --ask-become-pass
 ### GNOME config
 - Dark mode
 - Custom wallpaper
+- Quit applications with `<Super>q`
+- Toggle maximised windows with `<Super>m`
+- Set the number of workspaces to 9
+- Switch to workspace `<n>` with `<Super><n>`
+- Move window to workspace `<n>` with `<Shift><Super><n>`
 
 ### SSH
 - Key generated at `~/.ssh/default` using provided passphrase

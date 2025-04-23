@@ -1,0 +1,8 @@
+- name: Set the number of workspaces to 9
+  shell: |
+    gsettings set org.gnome.mutter dynamic-workspaces false
+    gsettings set org.gnome.desktop.wm.preferences num-workspaces 9
+  environment:
+    DISPLAY: :0
+    XDG_CURRENT_DESKTOP: GNOME
+  changed_when: false

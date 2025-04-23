@@ -1,0 +1,49 @@
+- name: Quit application with `<Super>q`
+  shell: gsettings set org.gnome.desktop.wm.keybindings close "['<Super>q']"
+  environment:
+    DISPLAY: :0
+    XDG_CURRENT_DESKTOP: GNOME
+  changed_when: false
+
+- name: Toggle the message tray with `<Super>v`
+  shell: |
+    gsettings set org.gnome.shell.keybindings toggle-message-tray "['<Super>v']"
+  environment:
+    DISPLAY: :0
+    XDG_CURRENT_DESKTOP: GNOME
+  changed_when: false
+
+- name: Toggle maximised with `<Super>m`
+  shell: |
+    gsettings set org.gnome.desktop.wm.keybindings toggle-maximized "['<Super>m']"
+  environment:
+    DISPLAY: :0
+    XDG_CURRENT_DESKTOP: GNOME
+  changed_when: false
+
+- name: Remove switch to application keybindings, which conflict with workspace keybindings
+  shell: |
+    gsettings set org.gnome.shell.keybindings switch-to-application-{{ item }} "[]"
+  with_sequence: count=9
+  environment:
+    DISPLAY: :0
+    XDG_CURRENT_DESKTOP: GNOME
+  changed_when: false
+
+- name: Switch to workspace
+  shell: |
+    gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-{{ item }} "['<Super>{{ item }}']"
+  with_sequence: count=9
+  environment:
+    DISPLAY: :0
+    XDG_CURRENT_DESKTOP: GNOME
+  changed_when: false
+
+- name: Move window to workspace
+  shell: |
+    gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-{{ item }} "['<Shift><Super>{{ item }}']"
+  with_sequence: count=9
+  environment:
+    DISPLAY: :0
+    XDG_CURRENT_DESKTOP: GNOME
+  changed_when: false
