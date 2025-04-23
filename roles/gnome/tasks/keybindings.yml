@@ -15,6 +15,15 @@
     DISPLAY: :0
     XDG_CURRENT_DESKTOP: GNOME
   changed_when: false
+
+- name: Toggle the application view with `<Super>a`
+  shell: |
+    gsettings set org.gnome.shell.keybindings toggle-application-view "['<Super>a']"
+  environment:
+    DISPLAY: :0
+    XDG_CURRENT_DESKTOP: GNOME
+  changed_when: false
+
 - name: Quit application with `<Super>q`
   shell: gsettings set org.gnome.desktop.wm.keybindings close "['<Super>q']"
   environment:
