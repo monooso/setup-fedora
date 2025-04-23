@@ -80,8 +80,6 @@ ansible-playbook -i inventory playbook.yml --ask-become-pass
 ### GNOME config
 - Dark mode
 - Custom wallpaper
-- Pop Shell installed & enabled
-- Search shortcut set to `Super+Space`
 
 ### SSH
 - Key generated at `~/.ssh/default` using provided passphrase
