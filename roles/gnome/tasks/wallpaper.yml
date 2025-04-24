@@ -1,22 +1,23 @@
 - name: Ensure Pictures directory exists
   file:
-    path: "{{ home_dir }}/Pictures"
+    path: "{{ home_dir }}/Pictures/Wallpapers"
     state: directory
     mode: '0755'
     owner: "{{ username }}"
     group: "{{ username }}"
 
-- name: Download selected wallpaper
-  get_url:
-    url: https://images.pexels.com/photos/1293120/pexels-photo-1293120.jpeg
-    dest: "{{ home_dir }}/Pictures/wallpaper.jpg"
+- name: Copy wallpaper to ~/Pictures/Wallpapers directory
+  copy:
+    src: assets/wallpapers/cut-paper-swirl.webp
+    dest: "{{ home_dir }}/Pictures/Wallpapers/cut-paper-swirl.webp"
     mode: '0644'
-    force: yes
+    owner: "{{ username }}"
+    group: "{{ username }}"
 
 - name: Set GNOME wallpaper
   shell: |
-    gsettings set org.gnome.desktop.background picture-uri 'file:///{{ home_dir }}/Pictures/wallpaper.jpg'
-    gsettings set org.gnome.desktop.background picture-uri-dark 'file:///{{ home_dir }}/Pictures/wallpaper.jpg'
+    gsettings set org.gnome.desktop.background picture-uri 'file:///{{ home_dir }}/Pictures/Wallpapers/cut-paper-swirl.webp'
+    gsettings set org.gnome.desktop.background picture-uri-dark 'file:///{{ home_dir }}/Pictures/Wallpapers/cut-paper-swirl.webp'
   args:
     executable: /bin/bash
   environment:
