@@ -1,24 +1,21 @@
 # Simple setup
 
-## Introduction
-Simple setup for an atomic desktop (such as Fedora Silverblue),
-or a non-atomic desktop (such as Fedora Workstation) that I intend
-to treat as immutable.
+A sane middle ground between littering my OS with `dnf` packages and repositories,
+and the rabbit hole of atomic desktops and distroboxes.
 
-This means that:
+The rules of thumb are:
 
-1. We use Flatpak for all desktop applications.
-2. We use Homebrew for all CLI applications. 
-3. We use Mise for all project dependencies.
-4. We use project-specific Distroboxes for development.
-5. We use "build" Distroboxes to build binaries from source.
+1. Use Flatpak for all desktop applications.
+2. Use Homebrew for all CLI applications. 
+3. Use Mise for all project dependencies.
+4. Use Podman containers for "services", such as PostgreSQL.
 
 ## Usage
-Run the installation script, using `bash setup.sh`.
+The repository includes three scripts:
 
-This performs the following actions:
-
-1. Ensures that Flathub is configured as a Flatpak remote.
-2. Installs the Homebrew formulae listed in the `Brewfile`.
-3. Installs Flatpaks listed in the `Brewfile`.
+- `flatpak.sh` takes care of all things Flatpak.
+  It sets up the "flathub" remote, removes the "fedora" remote, and installs a list of Flatpaks.
+- `homebrew.sh` takes care of all things Homebrew.
+  It sets up Homebrew and its dependencies, and installs a list of formulae.
+- `setup.sh` is a convenience script, which calls `flatpak.sh` and `homebrew.sh`.
 
