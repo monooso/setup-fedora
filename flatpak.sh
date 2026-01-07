@@ -33,3 +33,6 @@ flatpaks=(
 for f in "${flatpaks[@]}"; do
     flatpak install --noninteractive --or-update flathub $f
 done
+
+# 1Password is a special snowflake
+flatpak install --noninteractive https://downloads.1password.com/linux/flatpak/1Password.flatpakref
