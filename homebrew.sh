@@ -18,6 +18,7 @@ brew install \
     lazygit \
     mise \
     neovim \
+    opencode \
     rclone \
     ripgrep \
     starship \
