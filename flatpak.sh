@@ -15,6 +15,7 @@ flatpaks=(
     "com.github.marhkb.Pods"
     "com.github.tchx84.Flatseal"
     "com.google.Chrome"
+    "com.mattjakeman.ExtensionManager"
     "com.spotify.Client"
     "com.todoist.Todoist"
     "com.usebruno.Bruno"
