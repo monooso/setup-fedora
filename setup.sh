@@ -1,7 +1,10 @@
 #!/usr/bin/env shell
 
-# Set up Flatpak
+# Install `dnf` packages
+source dnf.sh
+
+# Install Flatpaks
 source flatpak.sh
 
-# Set up Homebrew
+# Install Homebrew formulae
 source homebrew.sh
