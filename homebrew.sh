@@ -1,15 +1,15 @@
 #!/usr/bin/env bash
+set -euo pipefail
 
 # Install Homebrew (idempotent)
-bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+echo "Installing Homebrew..."
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 # Add Homebrew to path to complete setup
-eval $("/home/linuxbrew/.linuxbrew/bin/brew shellenv")
-
-# Install dependencies (don't love this)
-sudo dnf group install development-tools
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 # Install CLI tools
+echo "Installing Homebrew formulae..."
 brew install \
     bat \
     fd \
