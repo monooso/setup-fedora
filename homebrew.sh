@@ -15,6 +15,9 @@ brew install \
     fd \
     fzf \
     gcc \
+    gh \
+    goreleaser \
+    kickstart \
     lazygit \
     mise \
     neovim \
@@ -22,4 +25,5 @@ brew install \
     rclone \
     ripgrep \
     starship \
-    stow
+    stow \
+    tree-sitter-cli
