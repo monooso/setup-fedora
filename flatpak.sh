@@ -14,16 +14,18 @@ fi
 # Install Flatpaks
 echo "Installing Flatpak apps..."
 flatpaks=(
-    "app.zen_browser.zen"
+    "be.alexandervanhee.gradia"
     "com.brave.Browser"
     "com.discordapp.Discord"
     "com.fastmail.Fastmail"
+    "com.github.johnfactotum.Foliate"
     "com.github.marhkb.Pods"
     "com.github.tchx84.Flatseal"
     "com.google.Chrome"
     "com.mattjakeman.ExtensionManager"
     "com.spotify.Client"
     "com.todoist.Todoist"
+    "com.transmissionbt.Transmission"
     "com.usebruno.Bruno"
     "dev.mufeed.Wordbook"
     "io.github.flattool.Ignition"
@@ -33,9 +35,12 @@ flatpaks=(
     "it.mijorus.gearlever"
     "md.obsidian.Obsidian"
     "net.nokyan.Resources"
+    "org.gnome.Epiphany"
     "org.gnome.Solanum"
     "org.gnome.gitlab.somas.Apostrophe"
     "org.mozilla.firefox"
+    "org.qbittorrent.qBittorrent"
+    "org.signal.Signal"
     "page.tesk.Refine"
 )
 for f in "${flatpaks[@]}"; do
