@@ -24,6 +24,7 @@ brew install \
     opencode \
     rclone \
     ripgrep \
+    shellcheck \
     starship \
     stow \
     tree-sitter-cli
