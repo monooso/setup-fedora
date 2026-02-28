@@ -20,7 +20,8 @@ echo "Installing essential tools..."
 sudo dnf install -y \
     fish \
     podman-compose \
-    wl-clipboard
+    wl-clipboard \
+    wofi
 
 # Install build dependencies for Homebrew and Erlang
 echo "Installing build dependencies..."
@@ -31,3 +32,4 @@ sudo dnf install -y \
     g++ \
     ncurses-devel \
     openssl-devel
+
