@@ -38,7 +38,6 @@ flatpaks=(
     "org.gnome.Epiphany"
     "org.gnome.Solanum"
     "org.gnome.gitlab.somas.Apostrophe"
-    "org.mozilla.firefox"
     "org.qbittorrent.qBittorrent"
     "org.signal.Signal"
     "page.tesk.Refine"
