@@ -24,4 +24,8 @@ echo "--- Installing Homebrew and formulae ---"
 source "$SCRIPT_DIR/homebrew.sh"
 
 echo ""
+echo "--- Installing Claude Code ---"
+curl -fsSL https://claude.ai/install.sh | bash
+
+echo ""
 echo "=== Setup complete ==="
