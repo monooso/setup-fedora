@@ -9,6 +9,11 @@ if ! sudo -v; then
     exit 1
 fi
 
+# Keep sudo credentials alive for the duration of the script
+while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
+SUDO_KEEPALIVE_PID=$!
+trap 'kill "$SUDO_KEEPALIVE_PID" 2>/dev/null' EXIT
+
 echo "=== Simple Setup ==="
 echo ""
 
