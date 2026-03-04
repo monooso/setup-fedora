@@ -18,6 +18,11 @@ sudo sh -c 'echo -e "[1password]\nname=1Password Stable Channel\nbaseurl=https:/
 sudo dnf check-update -y 1password 1password-cli || true
 sudo dnf install -y 1password 1password-cli
 
+# Install Ghostty terminal emulator
+echo "Installing Ghostty..."
+sudo dnf copr enable -y scottames/ghostty
+sudo dnf install -y ghostty
+
 # Install essential tools
 echo "Installing essential tools..."
 sudo dnf install -y \
