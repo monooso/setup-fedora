@@ -26,5 +26,4 @@ brew install \
     ripgrep \
     shellcheck \
     starship \
-    stow \
     tree-sitter-cli

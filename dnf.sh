@@ -15,11 +15,12 @@ sudo dnf upgrade -y
 echo "Installing 1Password..."
 sudo dnf install -y https://downloads.1password.com/linux/rpm/stable/x86_64/1password-latest.rpm
 
-# Install essential tools, which can't be managed by Homebrew
+# Install essential tools
 echo "Installing essential tools..."
 sudo dnf install -y \
     fish \
     podman-compose \
+    stow \
     wl-clipboard \
     wofi
 
