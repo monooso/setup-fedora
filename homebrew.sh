@@ -16,14 +16,11 @@ brew install \
     fzf \
     gcc \
     gh \
-    goreleaser \
-    kickstart \
     lazygit \
     mise \
     neovim \
     opencode \
     rclone \
     ripgrep \
-    shellcheck \
     starship \
     tree-sitter-cli
