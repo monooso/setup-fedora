@@ -15,6 +15,7 @@ fi
 echo "Installing Flatpak apps..."
 flatpaks=(
     "be.alexandervanhee.gradia"
+    "es.danirod.Cartero"
     "com.brave.Browser"
     "com.discordapp.Discord"
     "com.fastmail.Fastmail"
