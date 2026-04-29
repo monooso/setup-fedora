@@ -32,6 +32,10 @@ sudo dnf install -y \
     wl-clipboard \
     wofi
 
+# Install dependencies for legacy AppImages, in particular pCloud
+echo "Installing Fuse 2 packages for legacy AppImages..."
+sudo dnf install -y fuse fuse-libs
+
 # Install build dependencies for Homebrew and Erlang
 echo "Installing build dependencies..."
 sudo dnf group install -y development-tools
