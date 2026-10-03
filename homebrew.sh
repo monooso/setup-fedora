@@ -19,8 +19,8 @@ brew install \
     lazygit \
     mise \
     neovim \
-    opencode \
     rclone \
     ripgrep \
     starship \
-    tree-sitter-cli
+    tree-sitter-cli \
+    can1357/tap/omp

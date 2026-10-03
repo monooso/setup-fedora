@@ -34,19 +34,14 @@ sudo dnf install -y ghostty
 # Install essential tools
 echo "Installing essential tools..."
 sudo dnf install -y \
-    fish \
     podman-compose \
     stow \
-    wl-clipboard \
-    wofi
+    wl-clipboard
 
 # Install dependencies for legacy AppImages, in particular pCloud
 echo "Installing Fuse 2 packages for legacy AppImages..."
 sudo dnf install -y fuse fuse-libs
 
-# Install build dependencies for Homebrew and Erlang
+# Install build dependencies for Homebrew
 echo "Installing build dependencies..."
 sudo dnf group install -y development-tools
-sudo dnf install -y \
-    ncurses-devel \
-    openssl-devel

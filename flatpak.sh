@@ -15,23 +15,13 @@ fi
 echo "Installing Flatpak apps..."
 flatpaks=(
     "be.alexandervanhee.gradia"
-    "es.danirod.Cartero"
     "com.brave.Browser"
-    "com.discordapp.Discord"
     "com.fastmail.Fastmail"
     "com.github.marhkb.Pods"
     "com.github.tchx84.Flatseal"
-    "com.google.Chrome"
-    "com.mattjakeman.ExtensionManager"
-    "com.spotify.Client"
-    "com.todoist.Todoist"
-    "com.transmissionbt.Transmission"
-    "dev.mufeed.Wordbook"
     "io.github.flattool.Warehouse"
     "it.mijorus.gearlever"
     "md.obsidian.Obsidian"
-    "net.nokyan.Resources"
-    "org.gnome.gitlab.somas.Apostrophe"
     "org.signal.Signal"
 )
 for f in "${flatpaks[@]}"; do
