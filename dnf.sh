@@ -34,6 +34,7 @@ sudo dnf install -y ghostty
 # Install essential tools
 echo "Installing essential tools..."
 sudo dnf install -y \
+    fish \
     podman-compose \
     stow \
     wl-clipboard
